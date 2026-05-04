@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Song Details</h2>
+
+    <table border="1" id="table">
+        <tr>
+            <th>Song</th>
+            <th>Film</th>
+            <th>Director</th>
+            <th>Singer</th>
+            <th>Actor</th>
+            <th>Actress</th>
+        </tr>
+    </table>
+
+    <script>
+        fetch('http://localhost:3000/data')
+            .then(res => res.json())
+            .then(data => {
+
+                let table = document.getElementById("table");
+
+                data.forEach(s => {
+                    table.innerHTML += `
+        <tr>
+            <td>${s.songname}</td>
+            <td>${s.film}</td>
+            <td>${s.music_director}</td>
+            <td>${s.singer}</td>
+            <td>${s.actor || ''}</td>
+            <td>${s.actress || ''}</td>
+        </tr>`;
+                });
+
+            });
+    </script>
+
+</body>
+
+</html>

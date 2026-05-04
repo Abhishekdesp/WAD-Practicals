@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <input type="text" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="loginFunc()">Login</button>
+
+    <script>
+        function loginFunc()
+        {
+            let email=document.getElementById("email").value;
+            let pass=document.getElementById("password").value;
+
+            let users=JSON.parse(localStorage.getItem("users")) ||[];
+            
+            let found=users.find(u=>u.email===email && u.pass===pass);
+            if(found)
+            {
+                alert("Login successful");
+                window.location="list.html";
+            }
+            else{
+                alert("Invalid Credentials");
+            }
+        }
+    </script>
+</body>
+</html>

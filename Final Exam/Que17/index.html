@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Employee Directory</h2>
+
+<div id="employees"></div>
+
+<script>
+
+fetch('http://localhost:3000/employees')
+.then(res => res.json())
+.then(data => {
+
+    let div = document.getElementById("employees");
+
+    data.forEach(e => {
+        div.innerHTML += `
+            <div style="border:1px solid black; padding:10px; margin:10px;">
+                <img src="${e.image}"><br>
+                <b>${e.name}</b><br>
+                ${e.designation}<br>
+                Dept: ${e.department}<br>
+                Salary: ₹${e.salary}
+            </div>
+        `;
+    });
+
+});
+
+</script>
+
+</body>
+</html>

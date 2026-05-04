@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PICT College</title>
+
+    <!-- jQuery Mobile CDN -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<div data-role="page" id="home">
+
+    <div data-role="header">
+        <h1>PICT</h1>
+    </div>
+
+    <!-- NAVBAR -->
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#about" data-transition="slide">About</a></li>
+            <li><a href="#courses" data-transition="slide">Courses</a></li>
+            <li><a href="#dept" data-transition="slide">Departments</a></li>
+            <li><a href="#contact" data-transition="slide">Contact</a></li>
+        </ul>
+    </div>
+
+    <div data-role="content">
+        <h2>Welcome to PICT</h2>
+        <p>Pune Institute of Computer Technology</p>
+    </div>
+
+</div>
+
+<!-- ABOUT PAGE -->
+<div data-role="page" id="about">
+    <div data-role="header">
+        <h1>About Us</h1>
+    </div>
+
+    <div data-role="content">
+        <p>PICT is a premier engineering college in Pune.</p>
+    </div>
+</div>
+
+<!-- COURSES PAGE -->
+<div data-role="page" id="courses">
+    <div data-role="header">
+        <h1>Courses</h1>
+    </div>
+
+    <div data-role="content">
+
+        <!-- COLLAPSIBLE -->
+        <div data-role="collapsible">
+            <h3>B.E Courses</h3>
+            <p>Computer, IT, E&TC</p>
+        </div>
+
+        <div data-role="collapsible">
+            <h3>M.E Courses</h3>
+            <p>Advanced Computing, Data Science</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- DEPARTMENTS PAGE -->
+<div data-role="page" id="dept">
+    <div data-role="header">
+        <h1>Departments</h1>
+    </div>
+
+    <div data-role="content">
+        <ul data-role="listview">
+            <li>Computer Engineering</li>
+            <li>Information Technology</li>
+            <li>Electronics & Telecommunication</li>
+        </ul>
+    </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div data-role="page" id="contact">
+    <div data-role="header">
+        <h1>Contact</h1>
+    </div>
+
+    <div data-role="content">
+        <p>Email: pict@college.com</p>
+        <p>Phone: 1234567890</p>
+        <p>Location: Pune</p>
+    </div>
+</div>
+
+</body>
+</html>

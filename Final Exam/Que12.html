@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="todoCtrl">
+
+<h2>To-Do List</h2>
+
+<!-- Input with two-way binding -->
+<input ng-model="newTask" placeholder="Enter task">
+<button ng-click="addTask()">Add</button>
+
+<ul>
+    <li ng-repeat="task in tasks">
+
+        <!-- Display / Edit -->
+        <span ng-hide="task.edit">{{task.text}}</span>
+        <input ng-show="task.edit" ng-model="task.text">
+
+        <!-- Buttons -->
+        <button ng-click="task.edit = true">Edit</button>
+        <button ng-click="saveTask(task)">Save</button>
+        <button ng-click="deleteTask($index)">Delete</button>
+
+    </li>
+</ul>
+
+<script>
+angular.module("todoApp", [])
+.controller("todoCtrl", function($scope) {
+
+    $scope.tasks = [];
+
+    // Add
+    $scope.addTask = function() {
+        if ($scope.newTask) {
+            $scope.tasks.push({ text: $scope.newTask, edit: false });
+            $scope.newTask = "";
+        }
+    };
+
+    // Delete
+    $scope.deleteTask = function(index) {
+        $scope.tasks.splice(index, 1);
+    };
+
+    // Save (after edit)
+    $scope.saveTask = function(task) {
+        task.edit = false;
+    };
+
+});
+</script>
+
+</body>
+</html>

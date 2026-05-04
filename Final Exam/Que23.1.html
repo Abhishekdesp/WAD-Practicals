@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h1>PICT CLUBS</h1>
+        </div>
+
+        <div data-role="content">
+            <h3>Student Club and Activites</h3>
+
+            <ul data-role="listview">
+                <li><a href="#coding">Coding Club</a></li>
+                <li><a href="#robotics">Robotics Club</a></li>
+                <li><a href="#dance">Dance Club</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="coding">
+        <div data-role="header">
+            <h1>Coding Club</h1>
+            <a href="#home" data-icon="back">Back</a>
+        </div>
+
+        <div data-role="content">
+            <img src="headphones.jpeg" width="50" height="50">
+            <div data-role="collapsible">
+                <h3>Description</h3>
+                <p>Focus on programming ,hackathons etc</p>
+            </div>
+
+              <div data-role="collapsible">
+                <h3>Achievements</h3>
+                <p>Won national hackathons and coding contests.</p>
+              </div>
+        </div>
+    </div>
+</body>
+</html>

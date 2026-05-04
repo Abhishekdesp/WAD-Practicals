@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Rahul Sharma",
+        "designation": "Software Engineer",
+        "department": "IT",
+        "salary": 50000,
+        "image": "https://via.placeholder.com/100"
+    },
+    {
+        "name": "Sneha Patil",
+        "designation": "HR Manager",
+        "department": "HR",
+        "salary": 45000,
+        "image": "https://via.placeholder.com/100"
+    }
+]

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Login</h2>
+
+<input id="email" placeholder="Email"><br><br>
+<input id="password" type="password" placeholder="Password"><br><br>
+
+<button onclick="login()">Login</button>
+
+<script>
+
+function login() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    let found = users.find(u => u.email === email && u.password === password);
+
+    if(found) {
+        alert("Login successful");
+        window.location = "list.html";
+    } else {
+        alert("Invalid credentials");
+    }
+}
+
+</script>
+
+</body>
+</html>

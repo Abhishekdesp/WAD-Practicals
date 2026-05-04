@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <input type="text" id="task" placeholder="Enter Task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="list"></ul>
+
+    <script>
+        function loadTask()
+        {
+            fetch("http://localhost:3000")
+            .then(res=>res.json())
+            .then(data=>{
+                let list=document.getElementById("list");
+                list.innerHTML="";
+
+                data.forEach(t=>{
+                    list.innerHTML+=`
+                                    <li>
+                                        ${t.task}
+                                        <button onclick="del(${t.id})">X</button>
+                                        <button onclick="upd(${t.id})">Edit</button>
+                                    </li>`;
+                });
+            });
+        }
+
+        function addTask()
+        {
+            let task=document.getElementById("task").value;
+            fetch("http://localhost:3000",{
+                method:"POST",
+                body:JSON.stringify({task})
+            }).then(loadTask);
+        }
+
+        function del(id){
+            fetch("http://localhost:3000/"+id,{
+                method:"DELETE",
+            }).then(loadTask);
+        }
+
+        function upd(id)
+        {
+            let task=prompt("Enter new task")
+            fetch("http://localhost:3000/"+id,{
+                method:"PUT",
+                body:JSON.stringify({task})
+            }).then(loadTask);
+        }
+    </script>
+</body>
+</html>
